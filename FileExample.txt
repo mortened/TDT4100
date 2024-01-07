@@ -1,0 +1,14 @@
+FileExample
+$ExampleLeague1
+ExampleClub4;ExampleClub1;ExampleClub3;ExampleClub2;
+ExampleClub1-ExampleClub2-H;ExampleClub1-ExampleClub4-U;ExampleClub1-ExampleClub3-H;ExampleClub2-ExampleClub1-H;ExampleClub2-ExampleClub4-B;ExampleClub2-ExampleClub3-U;ExampleClub4-ExampleClub1-B;ExampleClub4-ExampleClub2-H;ExampleClub4-ExampleClub3-H;ExampleClub3-ExampleClub1-H;ExampleClub3-ExampleClub4-U;ExampleClub3-ExampleClub2-H;
+
+$ExampleLeague2
+
+$ExampleLeague3
+Arsenal;Chelsea;Liverpool;Man City;Man Utd;Spurs;
+
+$Eliteserien
+RBK;Brann;
+RBK-Brann-H;Brann-RBK-B;
+

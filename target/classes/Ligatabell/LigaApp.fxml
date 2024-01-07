@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="ligaOversikrift" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-font-family: helvetica; -fx-background-color: #15202B;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ligatabell.LigatabellController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="285.0">
+         <children>
+            <TextArea editable="false" layoutX="-4.0" layoutY="-2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="296.0" />
+            <GridPane layoutY="34.0" prefHeight="366.0" prefWidth="292.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="48.0" minWidth="10.0" prefWidth="28.74586296081543" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.99162292480469" minWidth="10.0" prefWidth="68.25413703918457" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.0" minWidth="10.0" prefWidth="26.49834442138672" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="68.2041015625" minWidth="8.102012634277344" prefWidth="26.391151428222656" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="77.89798736572266" minWidth="10.0" prefWidth="25.03741455078125" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="53.768707275390625" minWidth="10.0" prefWidth="25.93878173828125" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="73.802734375" minWidth="10.0" prefWidth="24.56121826171875" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ListView fx:id="posisjonListview" prefHeight="361.0" prefWidth="41.0" />
+                  <ListView fx:id="lagListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                  <ListView fx:id="kamperSpiltListView" prefHeight="361.0" prefWidth="38.0" GridPane.columnIndex="2" />
+                  <ListView fx:id="tapListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" />
+                  <ListView fx:id="uavgjortListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" />
+                  <ListView fx:id="seierListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" />
+                  <ListView fx:id="poengListview" prefHeight="366.0" prefWidth="54.0" GridPane.columnIndex="6" />
+               </children>
+            </GridPane>
+            <Text fx:id="ligaOverskrift" layoutX="12.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="235.43340050295444">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="292.0" layoutY="-1.0" prefHeight="400.0" prefWidth="303.0">
+         <children>
+            <TextField id="ligaNavn" fx:id="ligaNavn" layoutX="22.0" layoutY="33.0" prefHeight="26.0" prefWidth="164.0" promptText="Navn">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <Button id="spill" fx:id="spill" layoutX="223.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleSpill" prefHeight="42.0" prefWidth="68.0" text="Spill ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextField id="resultat" fx:id="resultat" alignment="CENTER" layoutX="223.0" layoutY="188.0" prefHeight="42.0" prefWidth="68.0" promptText="Resultat">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Button id="nyLiga" fx:id="nyLiga" layoutX="211.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleNyLiga" prefHeight="26.0" prefWidth="92.0" text="Lag ny liga">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <TextField id="klubbNavn" fx:id="klubbNavn" layoutX="22.0" layoutY="108.0" prefHeight="26.0" prefWidth="164.0" promptText="Navn">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <Button id="nyKlubb" fx:id="nyKlubb" layoutX="211.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleNyKlubb" prefHeight="26.0" prefWidth="92.0" text="Lag ny klubb">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="12.0" />
+               </font></Button>
+            <Button fx:id="tilbake" layoutX="244.0" layoutY="66.0" mnemonicParsing="false" onAction="#handleTilbake" prefHeight="26.0" prefWidth="59.0" text="Tilbake" visible="false" />
+            <SplitMenuButton id="ligaOversikt" fx:id="ligaOversikt" layoutX="23.0" layoutY="33.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="163.0" text="Ligaoversikt" visible="false">
+               <items>
+                  <MenuItem fx:id="menuNyLiga" mnemonicParsing="false" onAction="#handleMenuNyLiga" text="Ny liga" />
+               </items>
+            </SplitMenuButton>
+            <SplitMenuButton fx:id="hjemmelag" layoutX="23.0" layoutY="187.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="142.0" text="Hjemmelag" />
+            <SplitMenuButton fx:id="bortelag" layoutX="24.0" layoutY="250.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="141.0" text="Bortelag" />
+            <Button fx:id="lagreKnapp" layoutX="237.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleLagre" text="Lagre " />
+            <Button fx:id="hentLigaerKnapp" layoutX="140.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleHentLigaer" prefHeight="25.0" prefWidth="92.0" text="Hent ligaer" />
+            <Button fx:id="simulerKnapp" layoutX="24.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleSimuler" text="Simuler" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
